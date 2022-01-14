@@ -14,19 +14,19 @@ GPIO.setup(button_port, GPIO.IN)
 def forward():
     GPIO.output(driver_port_1, GPIO.HIGH)
     GPIO.output(driver_port_2, GPIO.LOW)
-    time.sleep(2)
+    time.sleep(.8)
     GPIO.output(driver_port_1, GPIO.LOW)
     GPIO.output(driver_port_2, GPIO.LOW)
+    time.sleep(3)
 
 
 def backward():
     GPIO.output(driver_port_1, GPIO.LOW)
     GPIO.output(driver_port_2, GPIO.HIGH)
-    time.sleep(2)
+    time.sleep(.65)
     GPIO.output(driver_port_1, GPIO.LOW)
     GPIO.output(driver_port_2, GPIO.LOW)
 
 
-if GPIO.input(button_port) == GPIO.HIGH:
-    forward()
-    backward()
+forward()
+backward()
