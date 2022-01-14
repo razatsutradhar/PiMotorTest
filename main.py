@@ -29,11 +29,11 @@ def backward():
 
 
 def button_callback(channel):
-    forward()
-    time.sleep(5)
-    backward()
+    if GPIO.input(button_port) == GPIO.HIGH:
+        forward()
+        time.sleep(5)
+        backward()
 
-GPIO.add_event_detect(10, GPIO.RISING, callback=button_callback)
 
 while True:
     time.sleep(1)
