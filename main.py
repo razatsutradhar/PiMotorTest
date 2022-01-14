@@ -35,3 +35,5 @@ while True:
     else:
         GPIO.output(driver_port_1, GPIO.LOW)
         GPIO.output(driver_port_2, GPIO.LOW)
+
+    time.sleep(.1)
