@@ -29,8 +29,11 @@ def backward():
     GPIO.output(driver_port_2, GPIO.LOW)
 
 
-while True:
-    if GPIO.input(button_port) == GPIO.HIGH:
-        print("button pressed")
+def button_callback(channel):
+    print("Button was pushed!")
 
-    time.sleep(.5)
+
+GPIO.add_event_detect(10, GPIO.RISING, callback=button_callback)
+
+while True:
+    time.sleep(1)
