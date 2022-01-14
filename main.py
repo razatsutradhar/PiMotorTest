@@ -18,7 +18,6 @@ def forward():
     time.sleep(.8)
     GPIO.output(driver_port_1, GPIO.LOW)
     GPIO.output(driver_port_2, GPIO.LOW)
-    time.sleep(3)
 
 
 def backward():
@@ -30,8 +29,9 @@ def backward():
 
 
 def button_callback(channel):
-    print("Button was pushed!")
-
+    forward()
+    time.sleep(5)
+    backward()
 
 GPIO.add_event_detect(10, GPIO.RISING, callback=button_callback)
 
