@@ -3,13 +3,13 @@ import RPi.GPIO as GPIO
 
 driver_port_1 = 11
 driver_port_2 = 13
-button_port = 3
+button_port = 10
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 GPIO.setup(driver_port_1, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(driver_port_2, GPIO.OUT, initial=GPIO.LOW)
-GPIO.setup(button_port, GPIO.IN)
+GPIO.setup(button_port, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 
 def forward():
