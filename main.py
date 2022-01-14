@@ -31,10 +31,6 @@ def backward():
 
 while True:
     if GPIO.input(button_port) == GPIO.HIGH:
-        GPIO.output(driver_port_1, GPIO.LOW)
-        GPIO.output(driver_port_2, GPIO.HIGH)
-    else:
-        GPIO.output(driver_port_1, GPIO.LOW)
-        GPIO.output(driver_port_2, GPIO.LOW)
+        print("button pressed")
 
-    time.sleep(.1)
+    time.sleep(.5)
